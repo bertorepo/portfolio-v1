@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
+
+  <!-- SWIPER CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -34,10 +37,10 @@
         <li><a href="#contact">Let's Talk</a></li>
       </ul>
 
-      <button>
+      <button id="menu-btn">
         <i class='bx bx-menu'></i>
       </button>
-      <button>
+      <button id="close-btn">
         <i class='bx bx-x'></i>
       </button>
     </div>
@@ -295,6 +298,134 @@
     </div>
   </section>
   <!-- End Recent Work -->
+
+  <!-- Start Testimonial Section -->
+  <section class="testimonials" id="">
+    <h1>Testimonials</h1>
+    <div class="container swiper">
+      <div class="carousel swiper-wrapper">
+        <div class="testimonial swiper-slide">
+          <div class="head">
+            <div class="profile-area">
+              <div class="avatar">
+                <img src="assets/images/avatar1.jpg" alt="avatar1">
+              </div>
+              <div class="info">
+                <h4>James Cameron</h4>
+                <small>Web Developer</small>
+              </div>
+            </div>
+            <div class="stars">
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+
+            </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat neque provident animi accusamus obcaecati
+            ipsa fuga velit dolore architecto quo!</p>
+        </div>
+        <div class="testimonial swiper-slide">
+          <div class="head">
+            <div class="profile-area">
+              <div class="avatar">
+                <img src="assets/images/avatar2.jpg" alt="avatar1">
+              </div>
+              <div class="info">
+                <h4>Lemuel Stark</h4>
+                <small>Web Designer</small>
+              </div>
+            </div>
+            <div class="stars">
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+            </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit ipsum, totam molestiae inventore consectetur
+            deleniti nihil ea. Suscipit, mollitia doloremque.</p>
+        </div>
+        <div class="testimonial swiper-slide">
+          <div class="head">
+            <div class="profile-area">
+              <div class="avatar">
+                <img src="assets/images/avatar3.jpg" alt="avatar1">
+              </div>
+              <div class="info">
+                <h4>Allen Iverson</h4>
+                <small>Graphics Designer</small>
+              </div>
+            </div>
+            <div class="stars">
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+              <i class='bx bx-star'></i>
+
+            </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat neque provident animi accusamus obcaecati
+            ipsa fuga velit dolore architecto quo!</p>
+        </div>
+      </div>
+      <!-- swiper scrollbar drag -->
+      <div class="swiper-scrollbar">
+        <div class="swiper-scrollbar-drag"></div>
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonial Section -->
+
+  <!-- START SECTION: Contact -->
+  <section class="contact" id="contact">
+    <div class="overlay">
+      <div class="container">
+        <h1>Let's Talk!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, laborum iste voluptatum dolores sint ipsa!
+        </p>
+        <form>
+          <input type="text" name="Name" placeholder="Name" required>
+          <input type="email" name="Email" placeholder="Email" required>
+          <input type="text" name="Subject" placeholder="Subject" required>
+          <textarea name="Message" placeholder="Message" required></textarea>
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+      </div>
+    </div>
+    <!-- END SECTION: Contact -->
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      <a href="#">
+        <h3>J_Doe</h3>
+      </a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Porfolio</a></li>
+        <li><a href="#contact">Let's Talk</a></li>
+      </ul>
+      <div class="socials">
+        <a href="www.facebook.com" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+        <a href="www.dribble.com" target="_blank"><i class='bx bxl-dribbble'></i></a>
+        <a href="www.github.com" target="_blank"><i class='bx bxl-github'></i></a>
+      </div>
+    </div>
+    <div class="copy">
+      Copyright 2022 &copy; | Lemuel Stark
+    </div>
+  </footer>
+
+  <!-- SWIPER JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="/dist/js/main.js"></script>
 </body>
 
 </html>
