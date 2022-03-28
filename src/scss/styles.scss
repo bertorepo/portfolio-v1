@@ -11,6 +11,15 @@
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background: $color_primary_light;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color_primary;
+}
+
 html {
   font-size: 15px;
   scroll-behavior: smooth;
@@ -64,6 +73,8 @@ section {
   padding: 10rem 0 7rem;
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 100vh;
 
   h1 {
     text-align: center;
@@ -159,6 +170,12 @@ nav {
   }
 }
 
+//class to show box shadow when window is scrolling
+.show-box-shadow {
+  box-shadow: 0 0.6rem 1rem $color_primary_light;
+  border: none;
+}
+
 // ====END NavBar======
 
 // ==== SECTION: LANDING ====
@@ -168,7 +185,6 @@ nav {
   position: relative;
   top: 5rem;
   padding-bottom: 14rem;
-  height: 100vh;
 
   .container {
     display: grid;
@@ -281,7 +297,6 @@ nav {
 // ==== START SECTION: ABOUT ====
 .about {
   background: $color_light;
-  height: 100vh;
 
   .container {
     display: grid;
@@ -294,6 +309,10 @@ nav {
 
     .read-more-content {
       display: none;
+    }
+
+    .show-content {
+      display: block;
     }
 
     .read-more {
@@ -339,66 +358,75 @@ nav {
         }
       }
 
-      .item {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1.6rem;
-        background: $color_light;
-        margin-bottom: 0.3rem;
+      .items {
+        display: none;
         transition: $transition;
 
-        &:hover {
-          background: $color_white;
-        }
-
-        .progress-area {
+        .item {
           display: flex;
-          width: 100%;
-          align-items: center;
+          flex-direction: column;
+          align-items: flex-start;
           gap: 1rem;
+          padding: 1.6rem;
+          background: $color_light;
+          margin-bottom: 0.3rem;
+          transition: $transition;
 
-          .progress-bar {
+          &:hover {
+            background: $color_white;
+          }
+
+          .progress-area {
+            display: flex;
             width: 100%;
-            height: 1rem;
-            background: $color_primary_light;
+            align-items: center;
+            gap: 1rem;
 
-            .progress {
-              width: 92%;
-              height: 100%;
-              background: $color_primary;
-            }
-          }
-        }
+            .progress-bar {
+              width: 100%;
+              height: 1rem;
+              background: $color_primary_light;
 
-        &:nth-child(2) {
-          .progress-area {
-            .progress-bar {
               .progress {
-                width: 70%;
+                width: 92%;
+                height: 100%;
+                background: $color_primary;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            .progress-area {
+              .progress-bar {
+                .progress {
+                  width: 70%;
+                }
+              }
+            }
+          }
+          &:nth-child(3) {
+            .progress-area {
+              .progress-bar {
+                .progress {
+                  width: 50%;
+                }
+              }
+            }
+          }
+          &:nth-child(4) {
+            .progress-area {
+              .progress-bar {
+                .progress {
+                  width: 40%;
+                }
               }
             }
           }
         }
-        &:nth-child(3) {
-          .progress-area {
-            .progress-bar {
-              .progress {
-                width: 50%;
-              }
-            }
-          }
-        }
-        &:nth-child(4) {
-          .progress-area {
-            .progress-bar {
-              .progress {
-                width: 40%;
-              }
-            }
-          }
-        }
+      }
+
+      .show-items {
+        display: block;
       }
     }
   }
@@ -408,7 +436,6 @@ nav {
 // ==== START SECTION: SERVICES ====
 .services {
   background: $color_light;
-  height: 100vh;
 
   .container {
     display: grid;
@@ -498,7 +525,6 @@ nav {
 // ==== START SECTION: TESTIMONIALS ====
 .testimonials {
   background: $color_light;
-  height: 70vh;
 
   .container {
     width: 44rem;
@@ -714,10 +740,11 @@ footer {
     font-size: 0.68rem;
   }
 
+  .container {
+    width: 94%;
+  }
   // ===NAVBAR====
   nav {
-    box-shadow: 0 1rem 1rem rgba($color: #000000, $alpha: 0.1);
-
     .container {
       width: 100%;
       h3 {
@@ -732,7 +759,8 @@ footer {
         height: 100vh;
         width: 14rem;
         background: $color_white;
-        box-shadow: 1rem 0 2rem $color_primary_light;
+        box-shadow: 0 0.5rem 1rem $color_primary_light;
+
         display: none;
 
         li {
@@ -769,7 +797,6 @@ footer {
   .landing {
     margin-top: -6rem;
     overflow-x: hidden;
-    overflow-y: hidden;
     max-width: 100vw;
 
     .container {
@@ -831,6 +858,104 @@ footer {
           height: 10rem;
           width: 10rem;
         }
+      }
+    }
+  }
+
+  // ABOUT SECTION
+
+  .about {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+
+  // Skill sections
+
+  .skills {
+    .container {
+      width: 94%;
+    }
+  }
+
+  // Services Sections
+
+  .services {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // recent Work
+
+  .recent-work {
+    .container {
+      text-align: center;
+
+      h2 {
+        width: 94vw;
+        margin: 1.4rem 0 1rem;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+
+        .project {
+          .action {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  // Testimonials
+
+  .testimonials {
+    .container {
+      grid-template-columns: 1fr;
+      width: 94vw;
+
+      .testimonial {
+        .head {
+          .stars {
+            i {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Contact Form
+
+  .contact {
+    .overlay {
+      .container {
+        width: 94vw;
+
+        p {
+          width: 80vw;
+          margin: 0.5rem auto 0;
+        }
+      }
+    }
+  }
+
+  // Footer
+
+  footer {
+    .container {
+      flex-direction: column;
+      gap: 3rem;
+
+      ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.4rem;
       }
     }
   }
